@@ -1,15 +1,13 @@
 # zafiro-openapi3
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/metadevpro/zafiro-openapi3.svg)](https://greenkeeper.io/)
-
 [![npm version](https://badge.fury.io/js/zafiro-openapi3.svg)](http://badge.fury.io/js/zafiro-openapi3)
 [![Build Status](https://travis-ci.org/metadevpro/zafiro-openapi3.svg?branch=master)](https://travis-ci.org/metadevpro/zafiro-openapi3)
 [![Dependencies](https://david-dm.org/metadevpro/zafiro-openapi3.svg)](https://david-dm.org/metadevpro/zafiro-openapi3#info=dependencies)
 [![img](https://david-dm.org/metadevpro/zafiro-openapi3/dev-status.svg)](https://david-dm.org/metadevpro/zafiro-openapi3/#info=devDependencies)
 [![Known Vulnerabilities](https://snyk.io/test/github/metadevpro/zafiro-openapi3/badge.svg)](https://snyk.io/test/github/metadevpro/zafiro-openapi3)
+[![Greenkeeper badge](https://badges.greenkeeper.io/metadevpro/zafiro-openapi3.svg)](https://greenkeeper.io/)
 
 Zafiro plugin providing OpenAPI v 3.x service description.
-
 
 ## Installation
 
