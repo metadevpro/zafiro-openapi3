@@ -50,6 +50,6 @@
     "inversify": "^4.9.0",
     "inversify-express-utils": "^5.2.0",
     "openapi3-ts": "^0.6.2",
-    "tslib": "1.8.1"
+    "tslib": "1.9.0"
   }
 }
