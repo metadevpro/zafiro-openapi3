@@ -1,6 +1,6 @@
 {
   "name": "zafiro-openapi3",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "OpenAPI contract generation for ZafiroJS",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
