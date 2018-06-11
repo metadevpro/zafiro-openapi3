@@ -49,7 +49,7 @@
   "dependencies": {
     "inversify": "^4.13.0",
     "inversify-express-utils": "^6.0.0",
-    "openapi3-ts": "^0.11.0",
+    "openapi3-ts": "^0.12.0",
     "tslib": "1.9.2"
   }
 }
