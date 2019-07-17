@@ -149,46 +149,36 @@ gulp.task("build-test", function() {
     .pipe(gulp.dest("test/"));
 });
 
-gulp.task("test", [ "istanbul:hook" ], function() {
-  return gulp.src([
-      "node_modules/reflect-metadata/Reflect.js",
-      "test/**/*.test.js"
-    ])
-    .pipe(mocha({ui: "bdd"}))
-    .on("error", function (err) {
-        process.exit(1);
-    })
-    .pipe(istanbul.writeReports());
+gulp.task("istanbul:hook", function() {
+    return gulp.src(["src/**/*.js"])
+        .pipe(istanbul())
+        .pipe(sourcemaps.write("."))
+        .pipe(istanbul.hookRequire());
+});
+  
+gulp.task("test", gulp.series(["istanbul:hook"]), function () {
+    return gulp.src([
+        "node_modules/reflect-metadata/Reflect.js",
+        "test/**/*.test.js"
+        ])
+        .pipe(mocha({ui: "bdd"}))
+        .on("error", function (err) {
+            process.exit(1);
+        })
+        .pipe(istanbul.writeReports()
+    );
 });
 
-gulp.task("istanbul:hook", function() {
-  return gulp.src(["src/**/*.js"])
-      .pipe(istanbul())
-      .pipe(sourcemaps.write("."))
-      .pipe(istanbul.hookRequire());
-});
 
 //******************************************************************************
 //* DEFAULT
 //******************************************************************************
-gulp.task("build", function(cb) {
-    runSequence(
-        "lint", 
-        [
-            "build-src",
-            "build-es",
-            "build-lib",
-            "build-amd",
-            "build-dts"
-        ],
-        "build-test", cb
-    );
-});
+gulp.task("build", gulp.series("lint", 
+                        gulp.parallel("build-src", "build-es", "build-lib", "build-amd", "build-dts"),
+                        "build-test", (done) =>  {
+        done(); 
+}));
 
-gulp.task("default", function (cb) {
-  runSequence(
-    "clean",
-    "build",
-    "test",
-    cb);
-});
+gulp.task("default", gulp.series("clean", "build", "test", (done) => {
+   done(); 
+}));
