@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/metadevpro/zafiro-openapi3#readme",
   "devDependencies": {
-    "@types/chai": "^4.1.7",
+    "@types/chai": "^4.2.10",
     "@types/express": "^4.17.0",
     "@types/mocha": "5.2.7",
     "@types/node": "^12.6.8",
